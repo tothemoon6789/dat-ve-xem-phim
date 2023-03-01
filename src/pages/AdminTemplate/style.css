@@ -1,0 +1,77 @@
+/* TODO: for tablet */
+@media only screen and (max-width:768px){
+    .wrap-admin {
+        position: relative;
+       
+    }
+    .admin-left-navbar {
+        position: absolute;
+        /* background-color: red; */
+        
+        width: 80%;
+        /* left: -100%; */
+        transform: translateX(-150%);
+        z-index: 2;
+    }
+    .admin-left-navbar-hide {
+        /* background-color: yellow; */
+        /* background-color: red; */
+        width: 80%;
+        left: -200%;
+        /* transform: translateX(-150%); */
+        transition: all 0.3s;
+        z-index: 2;
+    }
+    .admin-left-navbar-show {
+        /* background-color: yellow; */
+        background-color: #121212;
+        width: 80%;
+        margin-top: 50px;
+        left: 0;
+        z-index: 2;
+        /* transform: translateX(150%); */
+        transition: all 0.3s;
+    }
+
+    .admin-right-content {
+        /* background-color: aqua; */
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow-y: scroll;
+    }
+    .btn-open-navbar {
+        background-color: gray;
+        /* display: inline-block; */
+        /* position: absolute; */
+        /* left: 20px;
+        top: 200px; */
+        z-index: 1;
+    }
+    .btn-close {
+        position: absolute;
+        right: 0;
+    }
+    
+}
+@media only screen and (min-width:768px) {
+    .admin-left-navbar {
+        /* background-color: red; */
+        width: 25%;
+        transition: all 0.3s;
+    }
+  
+    .admin-right-content{
+        /* background-color: greenyellow; */
+        margin-left: 25%;
+        width: 75%;
+    }
+    .btn-open-navbar {
+        display: none;
+    }
+    .btn-close {
+        position: absolute;
+        right: 0;
+    }
+}

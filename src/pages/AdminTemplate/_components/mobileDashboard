@@ -1,0 +1,58 @@
+
+    // const [showNavBar, setShowNavBar] = useState('admin-left-navbar')
+    // const [btnClose, setBtnClose] = useState('inline-block')
+    // const [btnCloseOnTop, setBtnCloseOnTop] = useState(true)
+
+
+    // const [width, setWidth] = useState(0)
+    // const handleOnResize = (e) => {
+    //     setWidth(window.innerWidth)
+    // }
+    // useEffect(() => {
+    //     window.addEventListener('resize', handleOnResize);
+    //     return () => {
+    //         window.removeEventListener('resize', handleOnResize)
+    //     }
+    // }, [])
+    // useEffect(() => {
+    //     if (width > 768) {
+    //         setShowNavBar('admin-left-navbar')
+    //         setBtnClose('none')
+    //         setBtnCloseOnTop(false)
+    //     } else {
+    //         setBtnClose('inline-block')
+    //         setBtnCloseOnTop(true)
+    //     }
+    // }, [width])
+
+// const mapStateToProp = (state) => {
+//     return {
+//         adminInfo: state.adminReducer,
+//     }
+// }
+// const mapDispatchToProp = (dispatch) => {
+//     return {
+//         logOut : () => {
+//             const action = {
+//                 type: 'LOG_OUT'
+//             }
+//             dispatch(action)
+//         }
+//     }
+// }
+
+
+
+
+
+
+    // useEffect(() => {
+    //     if (window.innerWidth > 768) {
+    //         setShowNavBar('admin-left-navbar')
+    //         setBtnClose('none')
+    //         setBtnCloseOnTop(false)
+    //     } else {
+    //         setBtnClose('inline-block')
+    //         setBtnCloseOnTop(true)
+    //     }
+    // }, [])
