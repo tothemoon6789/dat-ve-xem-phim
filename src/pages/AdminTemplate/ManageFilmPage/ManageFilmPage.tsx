@@ -28,7 +28,7 @@ const ManageFilmPage = (props:IManageFilmPage) => {
             return <Spiner/>
         }
         if (listFilmForSeach.length>0) {
-            return listFilmForSeach.map((film, index) => {
+            return listFilmForSeach.map((film:any, index:number) => {
                 // console.log(film);
                 return <FilmItem key= {index} filmItem = {film}/>
             })

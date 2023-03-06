@@ -4,12 +4,14 @@ import { AppDispatch, RootState } from '../../../store';
 import { useDispatch } from 'react-redux';
 import { submitNewFilmThunk, updateState } from './duck/newFilmReducer';
 import Input from './components/Input';
+import { useNavigate } from 'react-router-dom';
 
 const AddNewPage = () => {
     const newFilm = useSelector((state: RootState) => state.adminNewFilm)
     console.log(newFilm);
     const dispatch = useDispatch<AppDispatch>()
     console.log(newFilm);
+    const navigate = useNavigate()
 
     const handleOnsubmit = (e: React.SyntheticEvent) => {
         e.preventDefault()
@@ -25,7 +27,7 @@ const AddNewPage = () => {
         formData.append("hot", newFilm.hot);
         formData.append("dangChieu", newFilm.dangChieu);
         formData.append("sapChieu", newFilm.sapChieu);
-        dispatch(submitNewFilmThunk(formData))
+        dispatch(submitNewFilmThunk({formData,navigate}))
 
     }
     return (

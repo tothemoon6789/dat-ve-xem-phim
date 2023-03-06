@@ -33,6 +33,7 @@ const FilmItem = (props: IFilmItem) => {
                         apiDeleteFilm(filmItem.maPhim)
                             .then((res) => {
                                 window.alert('Xoá thành công!')
+                                window.location.reload()
                             })
                             .catch((error) => {
                                 window.alert('Xoá thất bại!')

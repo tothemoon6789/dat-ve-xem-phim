@@ -36,7 +36,7 @@ export const adminUserReducer = createSlice({
         search : (state,action) => {
             const key = action.payload
             state.infoForSearch = state.info.filter((item) => {
-                return item.hoTen.trim().toLowerCase().search(key) 
+                return item.hoTen.trim().toLowerCase().search(key) !== -1
             })
 
         }

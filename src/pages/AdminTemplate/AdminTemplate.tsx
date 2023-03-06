@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Affix, Button, Divider, Layout, theme } from 'antd';
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useNavigate } from 'react-router-dom';
 
 import { PoweroffOutlined } from '@ant-design/icons';
 import FooterLeftNavBar from './_components/Navbar/FooterLeftNavBar';
@@ -8,19 +8,36 @@ import { AdminHeader } from './_components/Header/AdminHeader';
 import { HeaderLeftNavBar } from './_components/Navbar/HeaderLeftNavBar';
 import { MenuLeftNavBar } from './_components/Navbar/MenuLeftNavBar';
 import AnchorTop from './_components/AnchorTop/AnchorTop';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../store';
+import { logOutAdmin } from '../_duck/loginReducer';
+import { parseJSON } from 'jquery';
+
 
 const { Content, Footer, Sider } = Layout;
 
 
 const AdminTemplate: React.FC = () => {
-console.log('I AM IN ADMINTEMPLATE');
+    const dispatch = useDispatch<AppDispatch>()
+    const navigate = useNavigate()
+    console.log('I AM IN ADMINTEMPLATE');
 
     const [loadings, setLoadings] = useState<boolean[]>([]);
     const {
         token: { colorBgContainer },
     } = theme.useToken();
+
+    const localToken = window.localStorage.getItem('movie-admin')
+    if (localToken === null) {
+        return <Navigate to={'/login'} replace />
+    }
+    // const userInfo = localToken && parseJSON(localToken)
+
+
+
+
     return (
-        
+
         <Layout >
             <Affix >
                 <Sider
@@ -45,7 +62,12 @@ console.log('I AM IN ADMINTEMPLATE');
                         <div className='d-flex justify-content-end'>
                             <FooterLeftNavBar />
                             {/* icon={<PoweroffOutlined />} */}
-                            <Button type="primary" icon={<PoweroffOutlined />} danger />
+                            <Button
+                                onClick={() => {
+                                    dispatch(logOutAdmin())
+                                    navigate('/login')
+                                }}
+                                type="primary" icon={<PoweroffOutlined />} danger />
                         </div>
                     </div>
                 </Sider>

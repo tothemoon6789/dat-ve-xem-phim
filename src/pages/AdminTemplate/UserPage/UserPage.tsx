@@ -27,7 +27,7 @@ const UserPage = () => {
 
             <td>{item.email}</td>
             <td>{item.soDT}</td>
-            <td>Cac nut</td>
+            <td><button className="btn btn-danger">Xoá</button><button className="btn btn-warning">Sửa</button></td>
         </tr>
         })
     }
@@ -39,7 +39,7 @@ const UserPage = () => {
                     onChange={(event) => {
                         dispatch(search(event.target.value))
                     }}
-                    type="text" className="form-control bg-dark text-white" placeholder='Nhập tên người dùng' />
+                    type="text" className="form-control" placeholder='Nhập tên người dùng' />
             </div>
             <table className="table">
                 <thead>
