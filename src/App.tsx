@@ -46,6 +46,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           {renderRoute()}
+
+          
           {/* <Route path='' element={<HomeTemplate />}>
           <Route index element={<HomePage />}></Route>
           <Route path='detail' element={<DetailPage />}></Route>
